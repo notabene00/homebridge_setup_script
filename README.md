@@ -3,11 +3,11 @@
 Итак, что же делает этот скрипт?
 
 * Добавляет репозиторий nodejs 9.x
-* Ставит _nodejs_ и _libavahi-compat-libdnssd-dev_
-* Через npm ставит _mdns_ и _homebridge_
-* Создает папку _.homebridge_ в домашнем каталоге текущего пользователя
+* Ставит `nodejs` и `libavahi-compat-libdnssd-dev`
+* Через npm ставит `mdns` и `homebridge`
+* Создает папку `.homebridge` в домашнем каталоге текущего пользователя
 * Кладет туда файл конфигурации с данными для запуска веб-морды
-* Ставит сам плагин веб-морды - _homebridge-config-ui-x_
-* Создает _homebridge.service_ и запускает его
+* Ставит сам плагин веб-морды - `homebridge-config-ui-x`
+* Создает `homebridge.service` и запускает его
 
 Как итог, запустив этот скрипт хоть на впервые загруженном Raspberry Pi, имеющем доступ в сеть, через 5-7 минут Вы получите доступ к веб-морде homebridge по адресу http://raspberrypi.local:8080 в локальной сети.
