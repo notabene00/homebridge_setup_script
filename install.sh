@@ -6,7 +6,7 @@ sudo npm i -g --unsafe-perm mdns
 sudo npm i -g --unsafe-perm homebridge
 mkdir ~/.homebridge && cp config.json ~/.homebridge
 
-sudo npm install -g --unsafe-perm homebridge-config-ui-x
+sudo npm install -g --unsafe-perm homebridge-config-ui-x@3.6.1
 
 sudo cp homebridge.service /etc/systemd/system/
 sudo systemctl daemon-reload
