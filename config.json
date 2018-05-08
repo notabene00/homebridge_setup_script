@@ -14,7 +14,10 @@
 			"port": 8080,
 			"sudo": true,
 			"restart": "sudo -n systemctl restart homebridge",
-			"log": "systemd"
+			"log": {
+                		"method": "systemd",
+                		"service": "homebridge"
+            		}
 		}
 	]
 }
