@@ -13,6 +13,7 @@
 			"name": "Config",
 			"port": 8080,
 			"sudo": true,
+			"temp": "/sys/class/thermal/thermal_zone0/temp",
 			"restart": "sudo -n systemctl restart homebridge",
 			"log": {
                 		"method": "systemd",
