@@ -4,7 +4,7 @@
 
 * Добавляет репозиторий nodejs 9.x
 * Ставит `nodejs` и `libavahi-compat-libdnssd-dev`
-* Через npm ставит `mdns` и `homebridge`
+* Через npm ставит `homebridge`
 * Создает папку `.homebridge` в домашнем каталоге текущего пользователя
 * Кладет туда файл конфигурации с данными для запуска веб-морды
 * Ставит сам плагин веб-морды - `homebridge-config-ui-x`
