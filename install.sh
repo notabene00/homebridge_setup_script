@@ -1,12 +1,12 @@
 #!/bin/bash
 
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs libavahi-compat-libdnssd-dev
-mkdir ~/.homebridge && cp config.json ~/.homebridge
+sudo apt install -y nodejs npm libavahi-compat-libdnssd-dev
+[ ! -d ~/.homebridge ] && mkdir ~/.homebridge && cp config.json ~/.homebridge
 
 sudo npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 
-sudo tee -a > /etc/systemd/system/homebridge.service > /dev/null << EOF
+sudo bash -c "cat > /etc/systemd/system/homebridge.service" << EOL
 [Unit]
 Description=Homebridge Config UI X
 After=syslog.target network-online.target
@@ -14,7 +14,7 @@ After=syslog.target network-online.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which homebridge-config-ui-x) -I -U /$USER/.homebridge
+ExecStart=$(which homebridge-config-ui-x) -U /$USER/.homebridge -I
 Restart=on-failure
 RestartSec=3
 KillMode=process
@@ -23,9 +23,9 @@ AmbientCapabilities=CAP_NET_RAW
 
 [Install]
 WantedBy=multi-user.target
-EOF
+EOL
 
-sudo tee -a /etc/systemd/system/homebridge-config-ui-x.service > /dev/null << EOF
+sudo bash -c "cat > /etc/systemd/system/homebridge-config-ui-x.service" << EOL
 [Unit]
 Description=Node.js HomeKit Server 
 After=syslog.target network-online.target
@@ -33,7 +33,7 @@ After=syslog.target network-online.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which homebridge) -I -U /$USER/.homebridge
+ExecStart=$(which homebridge) -U /$USER/.homebridge -I 
 Restart=on-failure
 RestartSec=3
 KillMode=process
