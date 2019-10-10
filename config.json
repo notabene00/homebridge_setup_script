@@ -11,14 +11,15 @@
 		{
 			"platform": "config",
 			"name": "Config",
-			"port": 8080,
+			"port": 8888,
 			"sudo": true,
 			"temp": "/sys/class/thermal/thermal_zone0/temp",
-			"restart": "sudo -n systemctl restart homebridge",
+			"standalone": true,
+      		"restart": "sudo -n systemctl restart homebridge homebridge-config-ui-x",
 			"log": {
-                		"method": "systemd",
-                		"service": "homebridge"
-            		}
+				"method": "systemd",
+				"service": "homebridge"
+			}
 		}
 	]
 }
