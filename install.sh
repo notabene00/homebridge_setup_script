@@ -6,7 +6,7 @@ mkdir ~/.homebridge && cp config.json ~/.homebridge
 
 sudo npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 
-sudo cat > /etc/systemd/system/homebridge.service << EOL
+sudo tee -a > /etc/systemd/system/homebridge.service > /dev/null << EOF
 [Unit]
 Description=Homebridge Config UI X
 After=syslog.target network-online.target
@@ -23,9 +23,9 @@ AmbientCapabilities=CAP_NET_RAW
 
 [Install]
 WantedBy=multi-user.target
-EOL
+EOF
 
-sudo cat > /etc/systemd/system/homebridge-config-ui-x.service << EOL
+sudo tee -a /etc/systemd/system/homebridge-config-ui-x.service > /dev/null << EOF
 [Unit]
 Description=Node.js HomeKit Server 
 After=syslog.target network-online.target
