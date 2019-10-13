@@ -14,7 +14,7 @@ After=syslog.target network-online.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which homebridge-config-ui-x) -U /$HOME/.homebridge -I
+ExecStart=$(which homebridge-config-ui-x) -U $HOME/.homebridge -I
 Restart=on-failure
 RestartSec=3
 KillMode=process
@@ -33,7 +33,7 @@ After=syslog.target network-online.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which homebridge) -U /$HOME/.homebridge -I 
+ExecStart=$(which homebridge) -U $HOME/.homebridge -I 
 Restart=on-failure
 RestartSec=3
 KillMode=process

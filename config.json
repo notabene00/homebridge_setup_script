@@ -11,7 +11,7 @@
 		{
 			"platform": "config",
 			"name": "Config",
-			"port": 8888,
+			"port": 8080,
 			"sudo": true,
 			"temp": "/sys/class/thermal/thermal_zone0/temp",
 			"standalone": true,
